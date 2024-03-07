@@ -1,0 +1,135 @@
+
+   
+    
+    nav {
+        box-sizing: border-box;
+        height: 20vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        
+        position: relative;
+        top: 0;
+        overflow: hidden;
+    }
+    
+    nav .title {
+        font-size: 1.5rem;
+        margin: 1rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        
+        
+    
+    }
+    .title img{
+        width: 5vw;
+        height: 5vw;
+    }
+    .title h1{
+        font-size: 1.6vw;
+        font-weight: 400;
+        
+    }
+    
+    nav ul {
+        display: flex;
+        
+    }
+    
+    nav ul li {
+       list-style: none; 
+       padding-right: 20px;
+    }
+    
+    nav ul li a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 0;
+        margin: 0;
+        border-radius: 0.5rem;
+    }
+    
+    
+    
+    .menu i{
+        display: none;
+        position: absolute;
+        top: 1.2rem;
+        right: 0;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 2.25rem;
+        height: 2rem;
+        font-size: 4vw;
+    }
+    
+   
+    
+    
+    @media (max-width: 600px) {
+        nav .menu i {
+            display: flex;
+            font-size: 4.8vw;            
+        }
+        .menu{
+            align-items: center;
+        }
+        .title img{
+            width: 6vw;
+            height: 6vw;
+        }
+    
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+            
+        }
+        .title{
+            height: 7vh;
+            position: fixed;
+        }
+    
+        nav ul {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            
+            
+            
+        }
+    
+        nav ul.open {
+            
+            display: flex;
+            margin-top: 4rem;
+            background-color: #0f172a;
+            
+
+            
+        }
+    
+        nav ul li {
+            height: 200px;
+            width: 100%;
+            text-align: center;
+        }
+    
+        
+    }
+    @media (max-Width: 500px) {
+        .title img{
+            width: 40px;
+            height: 40px;
+        }
+        .title h1{
+            font-size: 3vw;
+            
+            
+        }
+    }

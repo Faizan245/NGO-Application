@@ -1,0 +1,35 @@
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading {
+    display: flex;
+    align-items: center;   
+    margin-top: 1rem;
+    margin-left: 1rem;   
+}
+.heading a{
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.heading img {
+    width: 5vw;
+    height: 5vw;
+}
+
+.heading h1 {
+    font-size: 1.3vw;
+    font-weight: 550;
+    color: black;
+
+}
+.dash{
+    margin-top: 1rem;
+    display: flex;
+    gap: 20px;
+}

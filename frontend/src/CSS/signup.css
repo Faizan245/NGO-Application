@@ -1,0 +1,54 @@
+.form-containerS{
+    
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    
+    
+    position: absolute;
+    left: 10%;
+}
+h2 {
+    text-align: center;
+  }
+  
+.form-group {
+    margin-bottom: 20px;
+    width: 600px;
+    
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="password"]{
+    width: 50%;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .sgnBtn{
+    display: block;
+    width: 20rem;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sgnBtn:hover {
+    background-color: #0056b3;
+  }

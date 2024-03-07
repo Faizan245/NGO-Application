@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section{
+    /* background: url('D:\react\AL-AnsariFoundationApp\frontend\public\background.png'); */
+  
+
+    background: rgb(22,139,9);
+    background: linear-gradient(0deg, rgba(22,139,9,1) 0%, rgba(255,255,255,1) 50%, rgba(255,102,0,1) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  padding: 0 15px;
+  height: 100vh;
+  position: relative;
+}
+.donate-btn{
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    
+}
+.donate-btn a{
+    text-decoration: none;
+}
+.donate-btn h1, h3{
+    font-size: 1;
+}
