@@ -42,7 +42,7 @@ const Signup = () => {
 
     try {
       console.log(formData);
-      const response = await fetch('http://localhost:5000/signup', {
+      const response = await fetch('https://ngo-application-z8ni.vercel.app/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -35,7 +35,7 @@ const Expenses = () => {
   
     try {
       
-      const response = await fetch('http://localhost:5000/add-expenses', {
+      const response = await fetch('https://ngo-application-z8ni.vercel.app/add-expenses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

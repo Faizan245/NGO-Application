@@ -8,7 +8,7 @@ const DonationListMem = () => {
     const memUserId = localStorage.getItem('userId');
     const fetchDonations = async () => {
       try {
-        const response = await fetch('http://localhost:5000/donations', {
+        const response = await fetch('https://ngo-application-z8ni.vercel.app/donations', {
           headers: {
             'Content-Type': 'application/json',
             // Add any other headers as needed
