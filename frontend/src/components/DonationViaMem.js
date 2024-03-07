@@ -47,7 +47,7 @@ const DonationViaMem = () => {
   
     try {
       
-      const response = await fetch('https://ngo-application-z8ni.vercel.app/add-donation', {
+      const response = await fetch('http://localhost:5000/add-donation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

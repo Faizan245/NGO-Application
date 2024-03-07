@@ -14,7 +14,7 @@ const Login = () => {
 
     try {
 
-      const response = await fetch('https://ngo-application-z8ni.vercel.app/login', {
+      const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
