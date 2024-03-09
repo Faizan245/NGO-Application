@@ -3,7 +3,7 @@ import '../CSS/donationList.css'
 
 const Donations = () => {
   const [donations, setDonations] = useState([]);
-  
+  const totalAmount = donations.reduce((acc, item) => acc + parseFloat(item.amountInFigures), 0);
   useEffect(() => {
     
     const fetchDonations = async () => {
@@ -30,7 +30,7 @@ const Donations = () => {
 
     fetchDonations();
   }, []); // Empty dependency array means this effect runs only once after the component mounts
-
+  
   return (
     <div className='containerD'>
       
@@ -60,6 +60,14 @@ const Donations = () => {
               <td>{donation.date}</td>
             </tr>
           ))}
+        </tbody>
+        <thead>
+          <tr>Total amount:</tr>
+        </thead>
+        <tbody>
+          <td>
+            {totalAmount}
+          </td>
         </tbody>
       </table>
     </div>

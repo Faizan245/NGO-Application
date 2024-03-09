@@ -17,8 +17,8 @@ const DonationViaMem = () => {
     date: '',
     amountInWords: '',
     amountInFigures: '',
-    city: '',  
-    phone: '',  
+    city: '',
+    phone: '',
   });
   const [phoneError, setPhoneError] = useState('');
 
@@ -30,23 +30,23 @@ const DonationViaMem = () => {
       [name]: value
     }));
     if (name === 'phone') {
-        if (value.length !== 10) {
-          setPhoneError('Phone number must be 10 digits long');
-        } else {
-          setPhoneError('');
-        }
+      if (value.length !== 10) {
+        setPhoneError('Phone number must be 10 digits long');
+      } else {
+        setPhoneError('');
       }
+    }
   };
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (phoneError) {
-        return;
-      }
-  
+      return;
+    }
+
     try {
-      
+
       const response = await fetch('http://localhost:5000/add-donation', {
         method: 'POST',
         headers: {
@@ -54,12 +54,23 @@ const DonationViaMem = () => {
         },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
         console.log('Form data submitted successfully!');
         console.log(formData);
         alert('Donation added successfully');
-        
+        setFormData({
+          member_id: user_id,
+          memberName: memberName,
+          fullName: '',
+          fatherName: '',
+          date: '',
+          amountInWords: '',
+          amountInFigures: '',
+          city: '',
+          phone: '',
+        })
+
         // You can add additional logic here if needed, such as showing a success message to the user
       } else {
         console.log(formData);
@@ -80,7 +91,7 @@ const DonationViaMem = () => {
       <form onSubmit={handleSubmit} key={formData.id}>
         <div className="form-group">
           <label htmlFor="memberName">Member Name:</label>
-          <input type="text" id="membeName" name="memberName" value={formData.memberName} onChange={handleChange} disabled/>
+          <input type="text" id="membeName" name="memberName" value={formData.memberName} onChange={handleChange} disabled />
         </div>
         <div className="form-group">
           <label htmlFor="fullName">Full Name:</label>
@@ -94,7 +105,7 @@ const DonationViaMem = () => {
           <label htmlFor="date">Date:</label>
           <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="amountInWords">Amount in Words:</label>
           <input type="text" id="amountInWords" name="amountInWords" spellCheck="true" value={formData.amountInWords} onChange={handleChange} />
@@ -107,14 +118,14 @@ const DonationViaMem = () => {
           <label htmlFor="city">City:</label>
           <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} />
         </div>
-        
+
         <div className="form-group">
           <label htmlFor="phone">Phone:</label>
           <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
           {phoneError && <span className="error">{phoneError}</span>}
           <small>Format: 1234567890</small>
         </div>
-        
+
         <button className='btn' type="submit">Donate {formData.amountInFigures}</button>
       </form>
     </div>

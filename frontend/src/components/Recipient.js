@@ -16,10 +16,10 @@ const Recipient = () => {
     amountInWords: '',
     amountInFigures: '',
     city: '',
-    state:'',
+    state: '',
     phone: '',
-    reason:'',
-    modeOfTransfer:''
+    reason: '',
+    modeOfTransfer: ''
   });
   const [phoneError, setPhoneError] = useState('');
 
@@ -31,24 +31,24 @@ const Recipient = () => {
       [name]: value
     }));
     if (name === 'phone') {
-        if (value.length !== 10) {
-          setPhoneError('Phone number must be 10 digits long');
-        } else {
-          setPhoneError('');
-        }
+      if (value.length !== 10) {
+        setPhoneError('Phone number must be 10 digits long');
+      } else {
+        setPhoneError('');
       }
+    }
   };
-  
- 
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (phoneError) {
-        return;
-      }
-  
+      return;
+    }
+
     try {
-      
+
       const response = await fetch('http://localhost:5000/add-recipient', {
         method: 'POST',
         headers: {
@@ -56,11 +56,26 @@ const Recipient = () => {
         },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
         console.log('Form data submitted successfully!');
         console.log(formData);
-        
+        alert('recipient added successfully');
+        setFormData({
+          member_id: user_id,
+          memberName: memberName,
+          fullName: '',
+          fatherName: '',
+          date: '',
+          amountInWords: '',
+          amountInFigures: '',
+          city: '',
+          state: '',
+          phone: '',
+          reason: '',
+          modeOfTransfer: ''
+        })
+
         // You can add additional logic here if needed, such as showing a success message to the user
       } else {
         console.error('Failed to submit form data');
@@ -80,7 +95,7 @@ const Recipient = () => {
       <form onSubmit={handleSubmit} key={formData.id}>
         <div className="form-group">
           <label htmlFor="memberName">Member Name:</label>
-          <input type="text" id="membeName" name="memberName" value={formData.memberName} onChange={handleChange} disabled/>
+          <input type="text" id="membeName" name="memberName" value={formData.memberName} onChange={handleChange} disabled />
         </div>
         <div className="form-group">
           <label htmlFor="fullName">Full Name:</label>

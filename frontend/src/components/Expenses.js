@@ -13,10 +13,10 @@ const Expenses = () => {
     member_id: user_id,
     memberName: memberName,
     expense: '',
-    expAmount: '', 
-    description:''
+    expAmount: '',
+    description: ''
   });
-  
+
 
 
   const handleChange = (e) => {
@@ -25,16 +25,16 @@ const Expenses = () => {
       ...prevState,
       [name]: value
     }));
-   
+
   };
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-  
+
+
     try {
-      
+
       const response = await fetch('http://localhost:5000/add-expenses', {
         method: 'POST',
         headers: {
@@ -42,11 +42,19 @@ const Expenses = () => {
         },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
         console.log('Form data submitted successfully!');
         console.log(formData);
-        
+        alert('expense added successfully');
+        setFormData({
+          member_id: user_id,
+          memberName: memberName,
+          expense: '',
+          expAmount: '',
+          description: ''
+        })
+
         // You can add additional logic here if needed, such as showing a success message to the user
       } else {
         console.log(formData);
@@ -62,12 +70,12 @@ const Expenses = () => {
   };
 
   return (
-    <div className="form-containerEX">
+    <div className="form-containerD">
       <h2>Form</h2>
       <form onSubmit={handleSubmit} key={formData.id}>
         <div className="form-group">
           <label htmlFor="memberName">Member Name:</label>
-          <input type="text" id="memberName" name="memberName" value={formData.memberName} onChange={handleChange} disabled/>
+          <input type="text" id="memberName" name="memberName" value={formData.memberName} onChange={handleChange} disabled />
         </div>
         <div className="form-group">
           <label htmlFor="expense">Expense type:</label>
@@ -81,7 +89,7 @@ const Expenses = () => {
           <label htmlFor="description">Expense Description:</label>
           <input type="text" id="description" name="description" value={formData.description} onChange={handleChange} />
         </div>
-        
+
         <button className='btn' type="submit">Add Expense</button>
       </form>
     </div>
