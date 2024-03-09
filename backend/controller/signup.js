@@ -1,5 +1,6 @@
 import ErrorHandler from "../error/error.js";
 
+import bcrypt from 'bcrypt'
 import User from "../models/userSchema.js"
 
 
@@ -10,7 +11,8 @@ const signup = async (req, res, next) => {
   }
 
   try {
-    await User.create({ fullname, username, phone, password, zone_id, role });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    await User.create({ fullname, username, phone, password : hashedPassword, zone_id, role });
     res.status(200).json({
       success: true,
       message: "Registered Successfully!",

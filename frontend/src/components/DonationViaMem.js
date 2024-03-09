@@ -58,6 +58,7 @@ const DonationViaMem = () => {
       if (response.ok) {
         console.log('Form data submitted successfully!');
         console.log(formData);
+        alert('Donation added successfully');
         
         // You can add additional logic here if needed, such as showing a success message to the user
       } else {

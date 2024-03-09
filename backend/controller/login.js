@@ -1,29 +1,7 @@
 
 import User from "../models/userSchema.js";
+import bcrypt from 'bcrypt'
 
-
-// const login = async (req, res, next) => {
-//     const { email, password } = req.body;
-
-//     let existingUser;
-//     try {
-//         existingUser = await User.findOne({ email: email });
-//     } catch (err) {
-//         return new Error(err);
-//     }
-//     if (existingUser) {
-//         // Compare provided password with stored password
-//         if (existingUser.password === password) {
-//           return true; // Passwords match, authentication successful
-//         }
-//       }
-      
-//     if (!existingUser) {
-//         return res.status(400).json({ message: "User not found. Signup Please" });
-//     }
-    
-    
-// }
 const login = async (req, res) => {
     const { username, password } = req.body;
   
@@ -34,9 +12,10 @@ const login = async (req, res) => {
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }
-      console.log(user);
+      
       // Check password
-      if (user.password !== password) {
+      const passwordMatch = await bcrypt.compare(password, user.password);
+      if (!passwordMatch) {
         return res.status(401).json({ error: 'Invalid password' });
       }
   

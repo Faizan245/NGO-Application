@@ -7,6 +7,7 @@ import Login from './screens/Login';
 import Signup from './screens/Signup';
 import { AuthProvider } from './context/AuthContext';
 import Member from './screens/Member';
+import Admin from './screens/Admin';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/:token' element={<Home/>}/>
           <Route path='/member' element={<Member/>}/>
+          <Route path='/admin' element={<Admin/>}/>
         </Routes>
       </Router>
       </AuthProvider>
