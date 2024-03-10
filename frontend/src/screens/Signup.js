@@ -46,7 +46,7 @@ const Signup = () => {
 
     try {
       console.log(formData);
-      const response = await fetch(`${api}/signup`, {
+      const response = await fetch(api + '/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
