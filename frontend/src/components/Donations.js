@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/donationList.css'
-
+import { REACT_APP_BACKEND_URL as api} from '../config'
 const Donations = () => {
   const [donations, setDonations] = useState([]);
   const totalAmount = donations.reduce((acc, item) => acc + parseFloat(item.amountInFigures), 0);
@@ -8,7 +8,7 @@ const Donations = () => {
     
     const fetchDonations = async () => {
       try {
-        const response = await fetch('http://localhost:5000/donations', {
+        const response = await fetch(api + '/donations', {
           headers: {
             'Content-Type': 'application/json',
             // Add any other headers as needed
@@ -66,7 +66,7 @@ const Donations = () => {
         </thead>
         <tbody>
           <td>
-            {totalAmount}
+            {totalAmount} 
           </td>
         </tbody>
       </table>

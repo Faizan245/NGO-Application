@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/donationList.css'
+import { REACT_APP_BACKEND_URL as api} from '../config'
 
 const DonationListMem = () => {
   const [donations, setDonations] = useState([]);
@@ -8,7 +9,7 @@ const DonationListMem = () => {
     const memUserId = localStorage.getItem('userId');
     const fetchDonations = async () => {
       try {
-        const response = await fetch('http://localhost:5000/donations', {
+        const response = await fetch(api + '/donations', {
           headers: {
             'Content-Type': 'application/json',
             // Add any other headers as needed

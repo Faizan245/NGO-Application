@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import '../CSS/recipient.css';
-
+import { REACT_APP_BACKEND_URL as api} from '../config'
 
 const Recipient = () => {
   const user_id = localStorage.getItem('userId');
@@ -49,7 +49,7 @@ const Recipient = () => {
 
     try {
 
-      const response = await fetch('http://localhost:5000/add-recipient', {
+      const response = await fetch(api + '/add-recipient', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

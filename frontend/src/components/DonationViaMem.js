@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import '../CSS/donate.css';
-
+import { REACT_APP_BACKEND_URL as api} from '../config'
 
 const DonationViaMem = () => {
 
@@ -47,7 +47,7 @@ const DonationViaMem = () => {
 
     try {
 
-      const response = await fetch('http://localhost:5000/add-donation', {
+      const response = await fetch(api + '/add-donation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

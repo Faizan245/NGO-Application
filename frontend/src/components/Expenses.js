@@ -1,7 +1,7 @@
 // Form.js
 
 import React, { useState } from 'react';
-
+import { REACT_APP_BACKEND_URL as api} from '../config'
 
 
 const Expenses = () => {
@@ -35,7 +35,7 @@ const Expenses = () => {
 
     try {
 
-      const response = await fetch('http://localhost:5000/add-expenses', {
+      const response = await fetch(api + '/add-expenses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

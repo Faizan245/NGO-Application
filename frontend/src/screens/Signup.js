@@ -2,10 +2,14 @@
 
 import React, { useState } from 'react';
 import "../CSS/signup.css"
+import { REACT_APP_BACKEND_URL as api} from '../config'
+
 
 
 
 const Signup = () => {
+  
+  
   const [formData, setFormData] = useState({
     fullname:'',
     username: '',
@@ -42,7 +46,7 @@ const Signup = () => {
 
     try {
       console.log(formData);
-      const response = await fetch('http://localhost:5000/signup', {
+      const response = await fetch(`${api}/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

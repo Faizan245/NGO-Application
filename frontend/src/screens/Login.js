@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { REACT_APP_BACKEND_URL as api} from '../config'
 import "../CSS/login.css";
 
 const Login = () => {
@@ -14,7 +14,7 @@ const Login = () => {
 
     try {
 
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch(api + '/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
