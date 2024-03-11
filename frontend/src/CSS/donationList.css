@@ -4,6 +4,10 @@
     top: 20%;
     height: 400px;
 }
+/* .filterContainer{
+  position: absolute;
+  bottom: 0;
+} */
 
 /* Style for the donation list table */
 table {

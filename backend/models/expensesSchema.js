@@ -16,6 +16,10 @@ const ExpensesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    currency:{
+        type: String,
+        required: true
+    },
     description:{
         type: String,
         minLength: [5, "description must contain at least 3 characters"],

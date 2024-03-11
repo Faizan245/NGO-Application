@@ -40,6 +40,7 @@ function Member() {
                     </div>
                     <div className='userinfo'>
                         <ul>
+                            <li><h5>Member</h5></li>
                             <li>
                                 {(!localStorage.getItem("token"))
                                     ?

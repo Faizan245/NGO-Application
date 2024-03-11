@@ -120,6 +120,7 @@ const Recipient = () => {
         <div className="form-group">
           <label htmlFor="amountInFigures">Amount in Figures:</label>
           <input type="number" id="amountInFigures" name="amountInFigures" value={formData.amountInFigures} onChange={handleChange} />
+          
         </div>
         <div className="form-group">
           <label htmlFor="city">City:</label>

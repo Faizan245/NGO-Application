@@ -38,6 +38,10 @@ const DonationInSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    currency:{
+        type: String,
+        required: true
+    },
     city:{
         type: String,
         required: true,

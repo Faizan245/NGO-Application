@@ -38,7 +38,7 @@ const DonationListMem = () => {
   }, []); // Empty dependency array means this effect runs only once after the component mounts
 
   return (
-    <div className='containerD'>
+    <div className='containerD' contentEditable={false}>
       
       <table className='data-tbl'>
         <thead>
@@ -48,6 +48,7 @@ const DonationListMem = () => {
             <th>City</th>
             <th>Amount (Words)</th>
             <th>Amount (Figures)</th>
+            <th>Currency</th>
             <th>Phone</th>
             <th>Date</th>
           </tr>
@@ -60,6 +61,7 @@ const DonationListMem = () => {
               <td>{donation.city}</td>
               <td>{donation.amountInWords}</td>
               <td>{donation.amountInFigures}</td>
+              <td>{donation.currency}</td>
               <td>{donation.phone}</td>
               <td>{donation.date}</td>
             </tr>

@@ -52,15 +52,16 @@ function Admin() {
                     <div className={`option ${selectedOption === 'Add Expenses' ? 'active' : ''}`} onClick={() => handleOptionClick('Add Expenses')}>
                         <h3>Show All Expenses</h3>
                     </div>
-                    
+
                 </div>
+
                 {selectedOption && (
                     <div className="info-container">
-                        {(selectedOption === 'Add a Donation') ? <Donations/> :
+                        {(selectedOption === 'Add a Donation') ? <Donations /> :
                             (selectedOption === 'Add Recipient') ? <AllRecipients /> :
                                 (selectedOption === 'Add Expenses') ? <AllExpenses /> :
-                                    
-                                        ''
+
+                                    ''
                         }
                     </div>
                 )}

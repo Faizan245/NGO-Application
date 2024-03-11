@@ -1,1 +1,1 @@
-export const REACT_APP_BACKEND_URL = "https://main--polite-cajeta-18faaa.netlify.app";
+export const REACT_APP_BACKEND_URL = "http://localhost:5000";

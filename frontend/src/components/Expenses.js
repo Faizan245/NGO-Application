@@ -14,6 +14,7 @@ const Expenses = () => {
     memberName: memberName,
     expense: '',
     expAmount: '',
+    currency:'',
     description: ''
   });
 
@@ -52,6 +53,7 @@ const Expenses = () => {
           memberName: memberName,
           expense: '',
           expAmount: '',
+          currency:'',
           description: ''
         })
 
@@ -82,8 +84,19 @@ const Expenses = () => {
           <input type="text" id="expense" name="expense" value={formData.expense} onChange={handleChange} />
         </div>
         <div className="form-group">
+          <label>Choose Currency:</label>
+          <select name="currency" value={formData.currency} onChange={handleChange} required={true}>
+            <option value='none'>Select</option>
+            <option value="Rupee">INR</option>
+            <option value="Dinar">KD</option>
+            <option value="SaudiRiyal">SAR</option>
+            <option value="QatarRiyal">QAR</option>
+          </select>
+        </div>
+        <div className="form-group">
           <label htmlFor="expAmount">Expense Amount:</label>
           <input type="number" id="expAmount" name="expAmount" value={formData.expAmount} onChange={handleChange} />
+          <input type='text' value={formData.currency}/>
         </div>
         <div className="form-group">
           <label htmlFor="description">Expense Description:</label>

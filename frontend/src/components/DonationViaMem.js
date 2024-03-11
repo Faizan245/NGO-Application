@@ -17,8 +17,9 @@ const DonationViaMem = () => {
     date: '',
     amountInWords: '',
     amountInFigures: '',
+    currency:'',
     city: '',
-    phone: '',
+    phone: ''
   });
   const [phoneError, setPhoneError] = useState('');
 
@@ -67,6 +68,7 @@ const DonationViaMem = () => {
           date: '',
           amountInWords: '',
           amountInFigures: '',
+          currency:'',
           city: '',
           phone: '',
         })
@@ -105,7 +107,16 @@ const DonationViaMem = () => {
           <label htmlFor="date">Date:</label>
           <input type="date" id="date" name="date" value={formData.date} onChange={handleChange} />
         </div>
-
+        <div className="form-group">
+          <label>Choose Currency:</label>
+          <select name="currency" value={formData.currency} onChange={handleChange} required={true}>
+            <option value='none'>Select</option>
+            <option value="Rupee">INR</option>
+            <option value="Dinar">KD</option>
+            <option value="SaudiRiyal">SAR</option>
+            <option value="QatarRiyal">QAR</option>
+          </select>
+        </div>
         <div className="form-group">
           <label htmlFor="amountInWords">Amount in Words:</label>
           <input type="text" id="amountInWords" name="amountInWords" spellCheck="true" value={formData.amountInWords} onChange={handleChange} />
@@ -113,7 +124,9 @@ const DonationViaMem = () => {
         <div className="form-group">
           <label htmlFor="amountInFigures">Amount in Figures:</label>
           <input type="number" id="amountInFigures" name="amountInFigures" value={formData.amountInFigures} onChange={handleChange} />
+          <input type='text' value={formData.currency}/>
         </div>
+        
         <div className="form-group">
           <label htmlFor="city">City:</label>
           <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} />

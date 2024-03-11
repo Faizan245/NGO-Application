@@ -40,6 +40,7 @@ const AllExpenses = () => {
             <th>Member Name</th>
             <th>Expense</th>
             <th>Expense Amount</th>
+            <th>Currency</th>
             <th>Description</th>
             
           </tr>
@@ -50,6 +51,7 @@ const AllExpenses = () => {
               <td>{expense.memberName}</td>  
               <td>{expense.expense}</td>
               <td>{expense.expAmount}</td>
+              <td>{expense.currency}</td>
               <td>{expense.description}</td>
               
             </tr>

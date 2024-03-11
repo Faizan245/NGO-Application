@@ -5,13 +5,13 @@ import { Expenses } from "../models/expensesSchema.js";
 
 
 export const sendExpenses = async (req, res, next) => {
-  const { member_id, memberName, expense, expAmount, description } = req.body;
-  if (!member_id || !memberName || !expense || !expAmount || !description ) {
+  const { member_id, memberName, expense, expAmount, currency, description } = req.body;
+  if (!member_id || !memberName || !expense || !expAmount || !currency || !description ) {
     return next(new ErrorHandler("Please Fill Full Registration Form!", 400));
   }
 
   try {
-    await Expenses.create({ member_id, memberName, expense, expAmount, description });
+    await Expenses.create({ member_id, memberName, expense, expAmount, currency, description });
     res.status(201).json({
       success: true,
       message: "Registered Successfully!",
