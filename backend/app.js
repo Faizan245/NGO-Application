@@ -7,6 +7,7 @@ import donationRouter from "./routes/donationRoute.js"
 import  loginRouter from './routes/loginRoute.js'
 import signupRouter from './routes/signupRoute.js'
 import expensesRouter from './routes/expensesRoute.js'
+import path from "path";
 
 
 const app = express();
@@ -16,6 +17,14 @@ app.use(cors({
     methods: ["POST"],
     credentials: true,
 }));
+// Serve static files
+app.use(express.static(path.resolve('../frontend', 'build')));
+
+// Handle all other routes by serving the index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('../frontend', 'build', 'index.html'));
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));  
 app.use('/', donationRouter)

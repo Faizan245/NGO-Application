@@ -48,7 +48,8 @@ const Donations = () => {
       <div className='containerD'>
         <div className='filterContainer'>
           <h5>Sort by Currency</h5>
-          <select value={selectedCurrency} onChange={handleCurrencyChange}>
+          <select  defaultValue="show" value={selectedCurrency}  onChange={handleCurrencyChange}>
+            
             <option value="show">Show All Currency</option>
             <option value="Dinar">KD</option>
             <option value="SaudiRiyal">SAR</option>
