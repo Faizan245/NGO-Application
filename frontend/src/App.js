@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Routes, Route} from  'react-router-dom'
 import Home from "./screens/Home";
 import Donate from './screens/Donate';
 import Login from './screens/Login';
-import Signup from './screens/Signup';
+import Signup from './screens/Signup.js';
 import { AuthProvider } from './context/AuthContext';
 import Member from './screens/Member';
 import Admin from './screens/Admin';
